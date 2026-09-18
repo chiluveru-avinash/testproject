@@ -1,0 +1,43 @@
+import turtle
+
+def draw_pennant():
+    # Set up the screen
+    screen = turtle.Screen()
+    screen.title("Pennant Flag Program")
+    screen.bgcolor("white")
+
+    # Create the turtle object
+    pen = turtle.Turtle()
+    pen.speed(3)
+    pen.pensize(3)
+
+    # 1. Draw the flagpole
+    pen.color("black")
+    pen.penup()
+    pen.goto(-100, -150)  # Start from the bottom of the pole
+    pen.pendown()
+    pen.goto(-100, 150)   # Draw up to the top of the pole
+
+    # 2. Draw and fill the triangular pennant
+    pen.color("red", "gold") # Black outline, gold/yellow fill
+    pen.begin_fill()
+    
+    # Move to the top-left of the flag (attached to pole)
+    pen.goto(-100, 120)   
+    # Draw to the tip of the triangular pennant
+    pen.goto(150, 45)     
+    # Draw back to the lower attachment point on the pole
+    pen.goto(-100, -30)   
+    # Close the triangle back to the starting point
+    pen.goto(-100, 120)   
+    
+    pen.end_fill()
+
+    # Hide the turtle icon when done
+    pen.hideturtle()
+
+    # Keep the window open until clicked
+    screen.exitonclick()
+
+if __name__ == "__main__":
+    draw_pennant()
